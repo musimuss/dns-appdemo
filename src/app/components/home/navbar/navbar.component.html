@@ -1,36 +1,99 @@
-<nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand me-auto" href="#">DNS</a>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DNS</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<!--Header Superior-->
+<div class="top-header py-4" [ngClass]="{ 'hidden' : isHidden }">
+  <div class="slogan container hide-on-small">
+    <div>
+      <div class="top-header-box">
+        <h3>DNS - SOLUCIONES EMPRESARIALES</h3>
       </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2 active" aria-current="page" routerLink="" routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}" >PRINCIPAL</a>
+      <div class="text-center text-md-right">
+        <ul class="list-unstyled list-inline">
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/DNS.Bo" class="btn floating btn-sm" style="font-size: 23px;">
+              <i class="bi bi-facebook"></i>
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2 active" routerLink="/quienes-somos" routerLinkActive="link-active">QUIENES SOMOS</a>
+          <li class="list-inline-item">
+            <a href="https://www.instagram.com/dnstarija/" class="btn floating btn-sm" style="font-size: 23px;">
+              <i class="bi bi-instagram"></i>
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2 active" routerLink="/servicios" routerLinkActive="link-active">SERVICIOS</a>
+          <li class="list-inline-item">
+            <a href="https://w.app/AItW2s" class="btn floating btn-sm" style="font-size: 23px;">
+              <i class="bi bi-whatsapp"></i>
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2 active" routerLink="/productos" routerLinkActive="link-active">PRODUCTOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2 active" routerLink="/soluciones-marcas" routerLinkActive="link-active">SOLUCIONES Y MARCAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-lg-2 active" routerLink="/contacto" routerLinkActive="link-active">CONTACTO</a>
+          <li class="list-inline-item">
+            <a href="#" class="btn floating btn-sm" style="font-size: 23px;">
+              <i class="bi bi-telegram"></i>
+            </a>
           </li>
         </ul>
       </div>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <div class="img-box">
+      <img src="assets\logo\logo-principal.png" alt="">
+    </div>
+  </div>
+</div>
+
+<!--NavBar-->
+<nav class="navbar sticky-lg-top navbar-expand-lg py-lg-0 fixed-top">
+  <div class="container px-4">
+    <div class="img-box">
+      <img src="assets\logo\logo-principal.png" [ngClass]="{ 'hidden-img' : isHiddenImg }" alt="">
+    </div>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar" aria-controls="top-navbar">
+      <i class="bi bi-grid"></i>
     </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="top-navbar" aria-labelledby="top-navbarLabel">
+      <div class="offcanvas-header">
+        <img src="assets\logo\logo-principal.png" alt="">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav ms-lg-auto p-4 p-lg-0 menu-navbar">
+          <li class="nav-item px-3 px-lg-0 py-1 py-lg-4 opcion-menu">
+            <a class="nav-link mx-lg-2 active" aria-current="page" routerLink="" routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}" (click)="cerrarNavbar()">PRINCIPAL</a>
+          </li>
+          <li class="nav-item px-3 px-lg-0 py-1 py-lg-4 opcion-menu">
+            <a class="nav-link mx-lg-2 active" routerLink="/quienes-somos" routerLinkActive="link-active" (click)="cerrarNavbar()">QUIENES SOMOS</a>
+          </li>
+          <li class="nav-item px-3 px-lg-0 py-1 py-lg-4 dropdown opcion-menu">
+            <a class="nav-link mx-lg-2 active dropdown-toggle" [class.link-active]="currentRoute.startsWith('/servicios')" data-bs-toggle="dropdown" aria-expanded="false">SERVICIOS</a>
+            <ul class="dropdown-menu navmenu-nav" aria-labelledby="navbarDropdown">
+              <li class="nav-item"><a class="dropdown-item" routerLink="/servicios" (click)="cerrarNavbar()">Consultorias</a></li>
+              <li class="nav-item"><a class="dropdown-item" routerLink="/servicios" fragment="instalaciones" (click)="cerrarNavbar()">Instalaciones</a></li>
+              <li class="nav-item"><a class="dropdown-item" routerLink="/servicios" fragment="soporte-tecnico" (click)="cerrarNavbar()">Soporte Tecnico</a></li>
+            </ul>
+          </li>
+          <!--PRODUCTOS-->
+          <li class="nav-item px-3 px-lg-0 py-1 py-lg-4 dropdown opcion-menu">
+            <a class="nav-link mx-lg-2 active dropdown-toggle" [class.link-active]="currentRoute.startsWith('/productos')" data-bs-toggle="dropdown" aria-expanded="false">PRODUCTOS</a>
+            <ul class="dropdown-menu navmenu-nav" aria-labelledby="navbarDropdown">
+              <li class="nav-item"><a class="dropdown-item" routerLink="/productos" (click)="cerrarNavbar()">Redes</a></li>
+              <li class="nav-item"><a class="dropdown-item" routerLink="/productos" fragment="section2" (click)="cerrarNavbar()">Seguridad</a></li>
+              <li class="nav-item"><a class="dropdown-item" routerLink="/productos" fragment="section3" (click)="cerrarNavbar()">Megafonia</a></li>
+              <li class="nav-item"><a class="dropdown-item" routerLink="/productos" fragment="section4" (click)="cerrarNavbar()">Detector de incendio</a></li>
+              <li class="nav-item"><a class="dropdown-item" routerLink="/productos" fragment="section5" (click)="cerrarNavbar()">Alarmas</a></li>
+            </ul>
+          </li>
+          <!--SOLUCIONES Y MARCAS-->
+          <li class="nav-item px-3 px-lg-0 py-1 py-lg-4 dropdown opcion-menu">
+            <a class="nav-link mx-lg-2 active dropdown-toggle" [class.link-active]="currentRoute.startsWith('/soluciones-marcas')" data-bs-toggle="dropdown" aria-expanded="false">SOLUCIONES Y MARCAS</a>
+            <ul class="dropdown-menu navmenu-nav" aria-labelledby="navbarDropdown">
+              <li class="nav-item"><a class="dropdown-item" routerLink="/soluciones-marcas" (click)="cerrarNavbar()">Redes</a></li>
+              <li class="nav-item"><a class="dropdown-item" routerLink="/soluciones-marcas" fragment="soluciones-megafonia" (click)="cerrarNavbar()">Megafonia</a></li>
+              <li class="nav-item"><a class="dropdown-item" routerLink="/soluciones-marcas" fragment="soluciones-incendio" (click)="cerrarNavbar()">Incendio</a></li>
+              <li class="nav-item"><a class="dropdown-item" routerLink="/soluciones-marcas" fragment="soluciones-alarmas" (click)="cerrarNavbar()">Alarmas</a></li>
+              <li class="nav-item"><a class="dropdown-item" routerLink="/soluciones-marcas" fragment="soluciones-cctv" (click)="cerrarNavbar()">Videovigilancia</a></li>
+            </ul>
+          </li>
+          <!--CONTACTO-->
+          <li class="nav-item px-3 px-lg-0 py-1 py-lg-4 opcion-menu">
+            <a class="nav-link mx-lg-2 active" routerLink="/contacto" routerLinkActive="link-active" (click)="cerrarNavbar()">CONTACTO</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>

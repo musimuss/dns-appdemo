@@ -1,0 +1,215 @@
+.contenedor-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.contenedor-b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100%;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.redes-container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 10vw;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.class-a {
+  align-items: end;
+}
+
+.wrapper .swipe {
+  position: relative;
+  width: fit-content;
+}
+
+.wrapper .swipe::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  width: 0%;
+  height: 100%;
+  background-color: #74B4B4;
+  animation: swipe 1.5s ease-out 1s forwards;
+}
+
+.wrapper .swipe--delay::after {
+  background-color: #848484;
+  animation-delay: 1.5s;
+}
+
+.wrapper h1 {
+  display: block;
+  color: #363636;
+  font-size: 72px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fade 0.01s ease-out 1.75s forwards;
+}
+
+.wrapper h3 {
+  display: block;
+  color: #363636;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fade 0.01s ease-out 2.25s forwards;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes swipe {
+  0% {
+    right: 100%;
+    left: 0;
+    width: 0%;
+  }
+  50% {
+    right: 0;
+    left: 0%;
+    width: 100%;
+  }
+  100% {
+    right: 0;
+    left: 100%;
+    width: 0%;
+  }
+}
+
+/*Separador*/
+.linea {
+  height: 5px;
+  position: fixed;
+  z-index: 1000;
+  background-color: #74B4B4;
+  width: 80%;
+  animation: 1s linea-animacion linear;
+}
+
+@keyframes linea-animacion {
+  from {
+    scale: 0 1;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+
+/*Panel*/
+.redes-container .fila {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: nowrap;
+  padding: 2rem 0;
+  padding-bottom: 3rem;
+}
+
+.redes-container .fila .img-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.redes-container .fila .img-container img {
+  border: 1.5rem solid #FFF;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.redes-container .fila .img-container,
+.redes-container .fila .content {
+  width: 100%;
+}
+
+/*Logos de Marcas*/
+.logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-logo {
+  height: 50px;
+  margin: 0 20px;
+}
+
+@media (max-width: 767px) {
+  .contenedor-a {
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+  }
+
+  .contenedor-b {
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+  }
+
+  .wrapper h1 {
+    font-size: 48px;
+  }
+
+  .wrapper h3 {
+    font-size: 24px;
+  }
+
+  .redes-container .fila {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .redes-container .fila .img-container {
+    width: 100%;
+    height: auto; /* Asegura que el contenedor se ajuste al tamaño de la imagen */
+  }
+
+  .redes-container .fila .img-container img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+    height: auto; /* Asegura que la imagen mantenga su proporción */
+    object-fit: cover; /* Escala la imagen para llenar el contenedor sin recortarse */
+  }
+
+  .redes-container .fila .content {
+    width: 100%;
+  }
+
+  .logos-container {
+    flex-direction: column;
+  }
+
+  .img-logo {
+    margin: 20px 40px;
+  }
+}

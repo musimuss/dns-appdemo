@@ -1,0 +1,8 @@
+.img-box img {
+  max-height: 10vh;
+  margin-bottom: 10px;
+}
+
+.list-inline-item a:hover {
+  transform: scale(1.5);
+}

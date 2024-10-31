@@ -1,1 +1,208 @@
-<p>products works!</p>
+<!--SECCION 1-->
+<section id="section1" class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="text-center">Soluciones en Redes para un Rendimiento Superior</h2>
+        <p>
+          Encuentra productos de redes confiables y de alta calidad, ideales para fortalecer la conectividad y mejorar la eficiencia de tu infraestructura empresarial.
+        </p>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <img src="assets\img\productos-redes.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of productos">
+        <div class="col-12 col-md-12 col-lg-3" *ngIf="item.categoria === 1">
+          <div class="card bg-light shadow-sm border-0 px-2 py-3 mb-4">
+            <div class="text-center">
+              <img [src]="item.imagen" alt="">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ item.titulo }}</h5>
+              <p>{{ item.descripcion }}</p>
+              <div class="mt-auto">
+                <p><b>Marca: </b>{{ item.marca }}</p>
+                <button class="btn btn-primary w-100" (click)="sendWhatsapp(item)">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<!--SECCION 2-->
+<section id="section2" class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <img src="assets\img\productos-cctv.png" alt="" class="img-animated">
+      </div>
+      <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="text-center">Videovigilancia Avanzada para una Seguridad Total</h2>
+        <p>
+          Descubre nuestros sistemas de videovigilancia de alta calidad, diseñados para ofrecer monitoreo constante y proteger tus instalaciones de manera eficaz y confiable.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of productos">
+        <div class="col-12 col-md-12 col-lg-3" *ngIf="item.categoria === 2">
+          <div class="card bg-light shadow-sm border-0 px-2 py-3 mb-4">
+            <div class="text-center">
+              <img [src]="item.imagen" alt="">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ item.titulo }}</h5>
+              <p>{{ item.descripcion }}</p>
+              <div class="mt-auto">
+                <p><b>Marca: </b>{{ item.marca }}</p>
+                <button class="btn btn-primary w-100" (click)="sendWhatsapp(item)">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<!--SECCION 3-->
+<section id="section3" class="banner banner-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="text-center">Megafonía de Alto Rendimiento</h2>
+        <p>
+          Ofrecemos sistemas de megafonía de alto rendimiento, ideales para garantizar una comunicación clara y efectiva en entornos empresariales y organizacionales.
+        </p>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <img src="assets\img\productos-megafonia.png" alt="" class="img-animated">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of productos">
+        <div class="col-12 col-md-12 col-lg-3" *ngIf="item.categoria === 3">
+          <div class="card bg-light shadow-sm border-0 px-2 py-3 mb-4">
+            <div class="text-center">
+              <img [src]="item.imagen" alt="">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ item.titulo }}</h5>
+              <p>{{ item.descripcion }}</p>
+              <div class="mt-auto">
+                <p><b>Marca: </b>{{ item.marca }}</p>
+                <button class="btn btn-primary w-100" (click)="sendWhatsapp(item)">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<!--SECCION 4-->
+<section id="section4" class="banner banner-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <img src="assets\img\productos-firealarms.png" alt="">
+      </div>
+      <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="text-center">Protección Confiable Contra Incendios</h2>
+        <p>
+          Descubre nuestra gama de productos contra incendios, diseñados para proporcionar protección eficaz y asegurar la seguridad de tus instalaciones y personal en todo momento.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of productos">
+        <div class="col-12 col-md-12 col-lg-3" *ngIf="item.categoria === 4">
+          <div class="card bg-light shadow-sm border-0 px-2 py-3 mb-4">
+            <div class="text-center">
+              <img [src]="item.imagen" alt="">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ item.titulo }}</h5>
+              <p>{{ item.descripcion }}</p>
+              <div class="mt-auto">
+                <p><b>Marca: </b>{{ item.marca }}</p>
+                <button class="btn btn-primary w-100" (click)="sendWhatsapp(item)">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+
+<!--SECCION 5-->
+<section id="section5" class="banner banner-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex flex-column align-items-center justify-content-center">
+        <h2 class="text-center">Sistemas de Alarmas de Seguridad Eficaces</h2>
+        <p>
+          Ofrecemos sistemas de alarmas avanzados, diseñados para proteger tus instalaciones contra intrusiones y garantizar la seguridad de tu entorno las 24 horas.
+        </p>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <img src="assets\img\productos-alarmas.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of productos">
+        <div class="col-12 col-md-12 col-lg-3" *ngIf="item.categoria === 5">
+          <div class="card bg-light shadow-sm border-0 px-2 py-3 mb-4">
+            <div class="text-center">
+              <img [src]="item.imagen" alt="">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ item.titulo }}</h5>
+              <p>{{ item.descripcion }}</p>
+              <div class="mt-auto">
+                <p><b>Marca: </b>{{ item.marca }}</p>
+                <button class="btn btn-primary w-100" (click)="sendWhatsapp(item)">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<app-button-up></app-button-up>
+<app-footer></app-footer>

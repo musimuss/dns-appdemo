@@ -1,5 +1,278 @@
-.contenedor {
-  margin-top: 10vh;
-  background-color: brown;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+#section1 {
+  top: 10vh;
+}
+
+#section2 {
+  padding-top: 10vh;
+}
+
+#section3 {
+  padding-top: 10vh;
+}
+
+
+/*Carrusel*/
+.carousel-item {
+  min-height: 400px;
   height: 80vh;
 }
+
+.carousel-item img {
+  height: 80vh;
+  width: 100%;
+  object-fit: cover;
+  min-height: 80vh;
+  z-index: 1;
+}
+
+.carousel-caption {
+  bottom: 220px;
+  z-index: 3;
+}
+
+.carousel-caption h5 {
+  font-size: 70px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 25px;
+}
+
+.carousel-caption p {
+  width: 60%;
+  margin: 10px auto;
+  font-size: 18px;
+}
+
+.carousel-item .dark-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.carousel-caption .btn-primary {
+  background-color: #74b4b4;
+  border-color: #74b4b4;
+  transition: all 0.3s ease;
+}
+
+.carousel-caption .btn-primary:hover,
+.carousel-caption .btn-primary:focus,
+.carousel-caption .btn-primary:active {
+  background-color: transparent;
+  border-color: #FFF;
+  transform: scale(1.5);
+}
+
+/*Servicios*/
+.services {
+  padding: 80px 0;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 2px solid transparent; /* Borde inicial transparente */
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.card-body h3, .card-body button {
+  text-shadow: 1px 1px 2px #000;
+}
+
+.card-body button:hover {
+  color: #FFF;
+  transform: scale(1.2);
+}
+
+.bg-car {
+  background: #74b4b4;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*Publicidad Iconos*/
+.box-icons i {
+  font-size: 40px;
+}
+
+.box-icons h3 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/*Productos*/
+.product {
+  padding: 40px 0;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.card img:hover {
+  transform: scale(1.5);
+}
+
+.card .btn-primary {
+  background-color: #74b4b4;
+  border: 2px solid transparent;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.card .btn-primary:hover {
+  background-color: #fff;
+  border-color: #74b4b4;
+  color: #74b4b4;
+  transform: scale(1);
+  text-shadow: none;
+  font-weight: bold;
+}
+
+/*BANNER*/
+.section-header h1 {
+  font-weight: bold;
+}
+
+.banner {
+  padding: 50px 0;
+  background-color: rgba(116, 181, 181, 0.4);
+}
+
+.banner h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+@media (min-width: 990px) {
+  .bg-car:hover {
+    background-color: #fff;
+    border: 2px solid #74b4b4;
+  }
+
+  .bg-car:hover h3,
+  .bg-car:hover p {
+    color: #74b4b4;
+  }
+
+  .box-icons:hover {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-item {
+    min-height: 500px;
+  }
+
+  .carousel-item img {
+    height: 500px;
+  }
+
+  .carousel-caption {
+    bottom: 30px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 30px;
+    margin-top: 0;
+  }
+
+  .carousel-caption p {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .services {
+    padding: 30px 0;
+  }
+
+  .product {
+    padding: 30px 0 0 0;
+  }
+
+  .banner {
+    margin-bottom: 30px;
+  }
+}
+
+
+/*Infinite Scroll*/
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  background-color: #D0D4D3;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: '';
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255,255,255,0), #D0D4D3);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0), #D0D4D3);
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img{
+  height: 50px;
+  margin: 0 40px;
+}
+

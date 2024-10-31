@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+#section2, #section3, #section4, #section5 {
+  padding-top: 10vh;
+}
+
+.banner {
+  padding: 30px 0;
+  scroll-margin-top: 10vh;
+  background-color: rgba(116, 180, 180, 0.4);
+}
+
+.banner h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.banner img {
+  width: 300px;
+}
+
+.img-animated {
+  scale: .5;
+  opacity: 0;
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: 5% 25%;
+}
+
+@keyframes fade-in {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.product {
+  padding: 40px 0;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mt-auto {
+  margin-top: auto; /* Empuja el botón hacia abajo */
+}
+
+.btn-primary {
+  background-color: #74BABA;
+  border-color: #587c7c;
+}
+
+.btn-primary:hover {
+  background-color: #FFF;
+  border-color: #587c7c;
+  color: #74BABA;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.card img:hover {
+  transform: scale(1.5);
+}
+
+@media (max-width: 767px) {
+  .banner {
+    margin-bottom: 30px;
+  }
+
+  .product {
+    padding: 30px 0 0 0;
+  }
+}

@@ -11,6 +11,8 @@ import { PrincipalComponent } from './principal/principal.component';
 import { ServicesComponent } from './services/services.component';
 import { SolutionsBrandsComponent } from './solutions-brands/solutions-brands.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
+import { ButtonUpComponent } from './button-up/button-up.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ContactComponent } from './contact/contact.component';
     ServicesComponent,
     SolutionsBrandsComponent,
     ContactComponent,
+    FooterComponent,
+    ButtonUpComponent,
   ],
   imports: [
     CommonModule,
